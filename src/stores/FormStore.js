@@ -50,6 +50,7 @@ class FormStore {
 
 	constructor(root) {
 		this.root = root;
+		u.requestCameraPermission();
 		this.loadCompanies().then(
 			() => this.s({ loading: false })
 		);

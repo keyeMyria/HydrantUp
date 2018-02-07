@@ -29,8 +29,6 @@ class Store {
 		// 	RNRestart.Restart();
 		// }
 		
-		u.requestCameraPermission();
-		
 		u.Server.connect();
 		this.autoConnect();
 

@@ -4,6 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
+    "s": "node node_modules/react-native/local-cli/cli.js start",
+    "sr": "node node_modules/react-native/local-cli/cli.js start --reset-cache",
+    "ra": "node node_modules/react-native/local-cli/cli.js run-android",
     "test": "jest"
   },
   "dependencies": {
