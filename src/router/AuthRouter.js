@@ -16,20 +16,18 @@ const AuthRouter = TabNavigator(
 	{
 		Form: {
 			screen: F,
-			navigationOptions: ({ navigation: { state } }) => ({
-				title: (state.params && state.params.title) || 'הידרנט'
-			}),
+			navigationOptions: {
+				title: 'הידרנט',
+			},
 		},
 		Profile: {
 			screen: Profile,
-			navigationOptions: ({ navigation: { state } }) => ({
-				title: (state.params && state.params.title) || 'פרופיל'
-			}),
+			navigationOptions: {
+				title: 'פרופיל',
+			},
 		},
 	},
 	{
-		// headerMode: 'none',
-		// mode: 'modal',
 		tabBarOptions: {
 			activeTintColor: '#c63644',
 			inactiveTintColor: '#e91e63',

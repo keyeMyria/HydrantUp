@@ -89,7 +89,6 @@ class Store {
 		} else if (!this.running) return;
 		const enterDate = u.now();
 		
-		// Loading new data
 		const { status } = await this.sync({ flag: 'connect' });
 		if (status != 'OK') {
 			if (this.timeOut) {
@@ -102,7 +101,6 @@ class Store {
 			this.s({ connected: true, lastComm: u.now() });
 		}
 
-		// Continue fetching
 		const spent = u.now() - enterDate;
 		setTimeout(() => this.autoConnect(), (spent > 10000) ? 1000 : 10000 - spent);
 	}
