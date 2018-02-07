@@ -5876,7 +5876,7 @@ react-navigation-redux-helpers@^1.0.0:
   dependencies:
     invariant "^2.2.2"
 
-react-navigation@^1.0.0-beta.22:
+react-navigation@^1.0.0-beta.30:
   version "1.0.0-beta.30"
   resolved "https://registry.yarnpkg.com/react-navigation/-/react-navigation-1.0.0-beta.30.tgz#91cd9683a4bda74c35fbe882d0b63139e8fb5652"
   dependencies:

@@ -14,41 +14,53 @@ const authRoutes = ['Form', 'Profile'];
 class Store {
 	@action s = s => _.assign(this, s)
 
-	@observable navigation
-		
-	@action setNewNavigation(navigation) {
-
-		this.navigation = navigation;
-		setTimeout(() => {
-			this.navigation.navigate(resetAction);
-		}, 1000);
-		
-		return;
-		
-		setTimeout(() => {
-			const resetAction = NavigationActions.reset({
-			  index: 0,
-			  actions: [NavigationActions.navigate({ routeName: 'Login' })],
-			});
-			this.navigation.dispatch(resetAction);
-		}, 1000);
-		setTimeout(() => {
-			const resetAction = NavigationActions.reset({
-			  index: 0,
-			  actions: [NavigationActions.navigate({ routeName: 'Auth' })],
-			});
-			this.navigation.dispatch(resetAction);
-		}, 3000);
-//		setTimeout(() => navigation.navigate('Login'), 1000);
-	}
+	@observable appNavigation
+	@observable authNavigation
+	
+	@action setAppNavigation(appNavigation) { this.s({ appNavigation }); }
+	@action setAuthNavigation(authNavigation) { this.s({ authNavigation }); }
 	
 	constructor(root) {
 		this.root = root;
+		reaction(() => this.root.app.auth, (auth) => {
+			if (auth)	{
+				this.appNavigation.dispatch(resetAction('Auth'));
+			} else {
+				this.appNavigation.dispatch(resetAction('Login'));
+			}
+		});
 	}
+}
 
+function resetAction(routeName) {
+	return NavigationActions.reset({
+		index: 0,
+		actions: [NavigationActions.navigate({ routeName })],
+	});
 }
 
 export default Store;
+
+// setTimeout(() => {
+// 	this.navigation.navigate(resetAction);
+// }, 1000);
+//
+//
+// setTimeout(() => {
+// 	const resetAction = NavigationActions.reset({
+// 	  index: 0,
+// 	  actions: [NavigationActions.navigate({ routeName: 'Login' })],
+// 	});
+// 	this.navigation.dispatch(resetAction);
+// }, 1000);
+// setTimeout(() => {
+// 	const resetAction = NavigationActions.reset({
+// 	  index: 0,
+// 	  actions: [NavigationActions.navigate({ routeName: 'Auth' })],
+// 	});
+// 	this.navigation.dispatch(resetAction);
+// }, 3000);
+//		setTimeout(() => navigation.navigate('Login'), 1000);
 
 //
 // class Store {

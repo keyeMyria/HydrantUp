@@ -20,14 +20,14 @@ class Store {
 	@computed get auth() { return this.user && u.isNotEmptyString(this.user.userId); }
 	
 	async init() {
-			I18nManager.forceRTL(false);
-		const isFirstLoad = !(await u.LocalStorage.get('firstLoad'));
-		if (isFirstLoad) {
-			await u.LocalStorage.clear();
-			await u.LocalStorage.save('firstLoad', true);
-			I18nManager.forceRTL(true);
-			RNRestart.Restart();
-		}
+		// 	I18nManager.forceRTL(false);
+		// const isFirstLoad = !(await u.LocalStorage.get('firstLoad'));
+		// if (isFirstLoad) {
+		// 	await u.LocalStorage.clear();
+		// 	await u.LocalStorage.save('firstLoad', true);
+		// 	I18nManager.forceRTL(true);
+		// 	RNRestart.Restart();
+		// }
 		
 		u.requestCameraPermission();
 		

@@ -2,60 +2,19 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { Provider } from 'mobx-react';
-// import { ObservedAppRouter } from '../router/AppRouter';
-import { NavigationActions, addNavigationHelpers, TabNavigator, StackNavigator } from 'react-navigation';
+import AppRouter from '../router/AppRouter';
 import Store from '../stores/Store';
-// import Login from '../view/screens/Login/Login';
-// import Loading from '../view/screens/Loading';
-// import Form from '../view/screens/Auth/Form/Form';
-// import Profile from '../view/screens/Auth/Profile/Profile';
-
-const Profile = () => (
-      <View>
-        <Text>
-          לחעיהלחיהלחי
-        </Text>
-      </View>
-);
-const Login = () => (
-      <View>
-        <Text>
-          Login
-        </Text>
-      </View>
-);
- 
-const AuthRouter = TabNavigator(
-	{
-		Profile: {
-			screen: Profile,
-		},
-		Login: {
-			screen: Login,
-		},
-	}
-);
-
 
 const App = () => {
 	console.log('rendering app');
 	return (
-	<Provider {...{ Store }}>
-			<AuthRouter />
-			</Provider>
+		<Provider {...{ Store }}>
+			<AppRouter />
+		</Provider>
 	);
 };
 
 export default App;
-
-//
-// <Provider {...{ Store, NavStore: Store.store.nav, EventsStore: Store.store.events }}>
-
-
-
-
-
-
 
 
 //
