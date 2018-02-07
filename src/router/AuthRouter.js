@@ -8,8 +8,6 @@ import Form from '../view/screens/Auth/Form/Form';
 import Profile from '../view/screens/Auth/Profile/Profile';
 
 const F = inject('Store')(observer((props) => {
-	console.log('props', props);
-	console.log('props.Store', props.Store);
 	props.Store.nav.setAuthNavigation(props.navigation);
 	return (<Form />);
 }));

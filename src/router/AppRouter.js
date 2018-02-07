@@ -7,8 +7,6 @@ import Loading from '../view/components/Loading/Loading';
 import AuthRouter from './AuthRouter';
 
 const L = inject('Store')(observer((props) => {
-	console.log('props', props);
-	console.log('props.Store', props.Store);
 	props.Store.nav.setAppNavigation(props.navigation);
 	return (<Loading loading />);
 }));

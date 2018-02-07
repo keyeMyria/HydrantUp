@@ -92,7 +92,7 @@ class FormStore {
 
 			if (data) {
 				this.s({ alertTitle: 'השליחה הצליחה!' });
-				this.s({ alertText: `${data.number}מספר הידרנט: ` });
+				this.s({ alertText: `מספר הידרנט: ${data.number}` });
 				
 				this.s({ formValue: null });
 				this.s({ batchDate: undefined });

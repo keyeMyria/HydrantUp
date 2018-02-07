@@ -23,9 +23,6 @@ export default class Profile extends Component {
 	@action set = s => _.assign(this, s)
 
 	render() {
-		setTimeout(() => {
-			this.props.navigation.navigate('Login');
-		}, 5000);
 		console.log('profile');
 		console.log(this.props);
 		const { props } = this;
@@ -37,19 +34,19 @@ export default class Profile extends Component {
 		return (
 			<View style={{ backgroundColor: 'aliceblue', flex: 1, flexDirection: 'column', justifyContent: 'space-between', alignItems: 'stretch' }}>
 				<Loading loading={this.loading} />
-				<View style={{ paddingTop: 10, height: 7, flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center' }}>
+				<View style={{ paddingTop: 5, height: 7, flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center' }}>
 					<Text style={styles.nameBold}>שם</Text>
 				</View>
 				<View style={{ height: 7, flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center' }}>
 					<Text style={styles.name}>{name}</Text>
 				</View>
-				<View style={{ paddingTop: 10, height: 7, flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center' }}>
+				<View style={{ paddingTop: 15, height: 7, flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center' }}>
 					<Text style={styles.nameBold}>אימייל</Text>
 				</View>
 				<View style={{ height: 7, flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center' }}>
 					<Text style={styles.name}>{email}</Text>
 				</View>
-				<View style={{ paddingTop: 10, height: 7, flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center' }}>
+				<View style={{ paddingTop: 15, height: 7, flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center' }}>
 					<Text style={styles.nameBold}>חברה</Text>
 				</View>
 				<View style={{ height: 7, flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center' }}>
